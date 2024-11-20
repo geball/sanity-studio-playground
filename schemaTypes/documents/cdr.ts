@@ -20,8 +20,8 @@ export const cdr = defineType({
       name: "crossDatasetReference",
       title: "Cross-Dataset Reference",
       type: "crossDatasetReference",
-      dataset: "production",
-      to: [{ type: "cdr" }],
+      dataset: process.env.SANITY_STUDIO_DATASET || "",
+      to: [{ type: "cdr", preview: { select: { title: "title" } } }],
     }),
   ],
 });
